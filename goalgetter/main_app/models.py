@@ -29,4 +29,4 @@ class Assignment(models.Model):
   course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
   def __str__(self):
-    return f'{self.get_category_display} on {self.date}'
+    return f'{self.name} {self.get_category_display()} on {self.date}'
