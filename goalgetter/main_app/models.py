@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -9,6 +10,8 @@ class Course(models.Model):
   def __str__(self):
     return f'{self.name} has id of {self.id}'
 
+  def get_absolute_url(self):
+    return reverse('detail', kwargs={'course_id': self.id})
 
 TASK=(
   ('E', 'Essay'),
@@ -26,6 +29,7 @@ class Assignment(models.Model):
     choices=TASK,
     default=TASK[2][0]
   )
+  todo = models.TextField('To Do', max_length=250) 
   course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
   def __str__(self):
