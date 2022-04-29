@@ -4,6 +4,7 @@
 <h1>All Courses</h1>
 
 {% for course in courses %}
+<a href="{% url 'detail' course.id %}">
   <div class="card">
     <div class="card-content">
       <span class="card-title">{{ course.name }}</span>
@@ -11,6 +12,7 @@
   
     </div>
   </div>
+</a>
 {% endfor %}
 
 {% endblock %}
