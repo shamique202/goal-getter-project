@@ -7,10 +7,10 @@ For most college students, "busy" does not even begin to describe how frantic th
 An intuitive and motivating way to track productivity by allowing users to access and customize their assignments.
 
 ### Group Members & roles: 
--  Monique Falloon, Designer
--  Rosa Flores, Database Manager
--  Nancy Martinez, Scrum Master
--  Shamique Etienne, Documenter & GitHub Manager 
+-  Monique Falloon, Designer [GitHub](https://github.com/mefalloon)
+-  Rosa Flores, Database Manager [GitHub](https://github.com/rosacf-ga)
+-  Nancy Martinez, Scrum Master [GitHub](https://github.com/nanmardel)
+-  Shamique Etienne, Documenter & GitHub Manager [Github](https://github.com/shamique202)
 
 ### Screenshots: 
 
@@ -29,7 +29,7 @@ An intuitive and motivating way to track productivity by allowing users to acces
 [Powerpoint](https://docs.google.com/presentation/d/1PFo-nP6LyRT1axYmt0b9EzCq6sb9umg40SqgB6c3lBQ/edit?usp=sharing)
 
 
-(Heroku link)
+(Heroku link Here)
 
 ### Minimum Viable Product (MVP): 
 -  As a user, I should be able to log in and out of the web application
