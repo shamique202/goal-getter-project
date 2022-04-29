@@ -15,8 +15,9 @@ An intuitive and motivating way to track productivity by allowing users to acces
 ### Screenshots: 
 
 ### Technologies Used:
--   CSS
--   Python
+-   HTML
+-   Materialize CSS
+-   Python 3 
 -   Django
 -   PostgreSQL
 -   Heroku
