@@ -34,3 +34,5 @@ class Assignment(models.Model):
 
   def __str__(self):
     return f'{self.name} {self.get_category_display()} on {self.date}'
+  def get_absolute_url(self):
+    return reverse('detail', kwargs={'pk': self.id})

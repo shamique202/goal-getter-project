@@ -2,8 +2,8 @@
 
 
 {% block content %}
-  <h1>{{ course.name }} detail page!</h1>
-  
+<h1>{{ course.name }} detail page!</h1>
+
 
 <div class="row">
   <div class="col s6">
@@ -20,43 +20,47 @@
   </div>
 </div>
 <div class="col s6">
-    <table class="striped">
-      <thead>
-        <tr><th>Date</th>
-          <th>To do</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for assignment in course.assignment_set.all %}
-        <tr>
-          <td>{{assignment.date}}</td>
-          <td>{{assignment.todo}}</td>
-          <td>{{assignment.get_category_display}}</td>
-        </tr>
-      </tbody>
-      </table>
-      </div>
-        {% endfor %}
-  <!-- new code below -->
-  <form method="post" action="{% url 'add_assignment' course.id %}">
-    {% csrf_token %}
-    {{ assignment_form.as_p }}
-    <input type="submit" class="btn" value="Add Assignment">
-  </form>
-  
-  <!-- new code above -->
   <table class="striped">
-    <script>
-      const dateEl = document.getElementById('id_date');
-      M.Datepicker.init(dateEl, {
-        format: 'yyyy-mm-dd',
-        defaultDate: new Date(),
-        setDefaultDate: true,
-        autoClose: true
-      });
-      const selectEl = document.getElementById('id_category');
-  M.FormSelect.init(selectEl);
-    </script> 
-{% endblock %}
-  
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>To do</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for assignment in course.assignment_set.all %}
+      <tr>
+        <td>{{assignment.date}}</td>
+        <td>{{assignment.todo}}</td>
+        <td>{{assignment.get_category_display}}</td>
+        <td>
+          <a href="">Edit</a>
+          <a href="{% url 'delete_assignment' assignment.id %}">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<!-- new code below -->
+<form method="post" action="{% url 'add_assignment' course.id %}">
+  {% csrf_token %}
+  {{ assignment_form.as_p }}
+  <input type="submit" class="btn" value="Add Assignment">
+</form>
+
+<!-- new code above -->
+<table class="striped">
+  <script>
+    const dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+    const selectEl = document.getElementById('id_category');
+    M.FormSelect.init(selectEl);
+  </script>
+  {% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Course, Assignment
 from .forms import AssignmentForm
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView 
 
 # from django.contrib.auth import login 
 
@@ -11,6 +11,13 @@ from django.http import HttpResponse
 class CourseCreate(CreateView):
   model = Course
   fields = '__all__'
+# class AssignmentUpdate(UpdateView):
+#   model = Assignment
+#   fields = ['name', 'date', 'category', 'todo']
+
+class AssignmentDelete(DeleteView):
+  model = Assignment
+  success_url = 'courses/<int:course_id>/'
 
 # Define the home view
 def home(request):
@@ -34,4 +41,9 @@ def add_assignment(request, course_id):
     new_assignment = form.save(commit=False)
     new_assignment.course_id = course_id
     new_assignment.save()
-  return redirect('detail', course_id=course_id)  
+  return redirect('detail', course_id=course_id) 
+
+# def delete_assignment(request, course_id, assignment_id):
+#   Course.objects.get(id=course_id).assignments.remove(assignment_id)
+#   return redirect('detail', course_id=course_id)
+
