@@ -20,8 +20,26 @@
   </div>
 </div>
 <div class="col s6">
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th>
+          <th>To do</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for assignment in course.assignment_set.all %}
+        <tr>
+          <td>{{assignment.date}}</td>
+          <td>{{assignment.todo}}</td>
+          <td>{{assignment.get_category_display}}</td>
+        </tr>
+      </tbody>
+      </table>
+      </div>
+        {% endfor %}
   <!-- new code below -->
-  <form method="post">
+  <form method="post" action="{% url 'add_assignment' course.id %}">
     {% csrf_token %}
     {{ assignment_form.as_p }}
     <input type="submit" class="btn" value="Add Assignment">
