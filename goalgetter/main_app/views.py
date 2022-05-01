@@ -15,9 +15,9 @@ class CourseCreate(CreateView):
 #   model = Assignment
 #   fields = ['name', 'date', 'category', 'todo']
 
-class AssignmentDelete(DeleteView):
-  model = Assignment
-  success_url = 'courses/<int:course_id>/'
+# class AssignmentDelete(DeleteView):
+#   model = Assignment
+#   success_url = 'courses/<int:course_id>/'
 
 # Define the home view
 def home(request):
@@ -43,7 +43,8 @@ def add_assignment(request, course_id):
     new_assignment.save()
   return redirect('detail', course_id=course_id) 
 
-# def delete_assignment(request, course_id, assignment_id):
-#   Course.objects.get(id=course_id).assignments.remove(assignment_id)
-#   return redirect('detail', course_id=course_id)
+def delete_assignment(request, course_id, assignment_id):
+  # Course.objects.get(id=course_id).assignments.remove(assignment_id)
+  Assignment.objects.filter(id=assignment_id).delete()
+  return redirect('detail', course_id=course_id)
 
