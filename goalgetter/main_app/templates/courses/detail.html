@@ -19,21 +19,28 @@
     </div>
   </div>
 </div>
+<form method="post" action="{% url 'add_assignment' course.id %}">
+  {% csrf_token %}
+  {{ assignment_form.as_p }}
+  <input type="submit" class="btn" value="Add Assignment">
+</form>
 <div class="col s6">
   <table class="striped">
     <thead>
       <tr>
-        <th>Date</th>
-        <th>To do</th>
+        <th>Due Date</th>
+        <th>Assignment</th>
         <th>Category</th>
+        <th>To Do</th> 
       </tr>
     </thead>
     <tbody>
       {% for assignment in course.assignment_set.all %}
       <tr>
         <td>{{assignment.date}}</td>
-        <td>{{assignment.todo}}</td>
+        <td>{{assignment.name}}</td>
         <td>{{assignment.get_category_display}}</td>
+        <td>{{assignment.todo}}</td>
         <td>
           <form action="{% url 'delete_assignment' course.id assignment.id %}" method="post">
             {% csrf_token %}
@@ -45,15 +52,7 @@
     </tbody>
   </table>
 </div>
-<!-- new code below -->
-<form method="post" action="{% url 'add_assignment' course.id %}">
-  {% csrf_token %}
-  {{ assignment_form.as_p }}
-  <input type="submit" class="btn" value="Add Assignment">
-</form>
 
-<!-- new code above -->
-<table class="striped">
   <script>
     const dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
