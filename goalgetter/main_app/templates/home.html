@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home</h1>
-<hr />
-<p>Use Goal Getter</p>
+<h1>Welcome </h1>
+
+<button><a href="{% url 'login' %}">Log In</a></button>
+<button><a href="{% url 'signup' %}">Sign Up</a></button>
 
 {% endblock %}

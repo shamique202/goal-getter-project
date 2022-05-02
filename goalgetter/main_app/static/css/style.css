@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     background-image: url('/static/images/gg_background.png');
     background-position: bottom;
-    background-size: 1450px;
+    background-size: 120%;
     background-repeat: no-repeat;
     width: 100%;
     background-color: #B9FAF2;
@@ -12,6 +12,10 @@ body {
 
 main {
     flex: 1 0 auto;
+    width: 50%; 
+    background-color: white;  
+    margin: 0 auto;
+    padding: 20px;
     
 }
 
@@ -22,4 +26,27 @@ footer.page-footer {
 
 nav li {
     color: rgb(26,108,108);
+    font-family: 'Bebas Neue', cursive;
+}
+
+nav {
+    box-shadow: none;
+}
+
+nav img {
+    margin-left: 12px;
+}
+
+.csshook {
+    font-size: 30px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(26,108,108);
+    text-align: center;
+}
+
+.card {
+    height: 150px;
 }

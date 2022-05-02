@@ -9,6 +9,9 @@
     <title>Goal Getter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 </head>
@@ -16,7 +19,7 @@
 <body>
     <header class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper amber">
+            <div class="nav-wrapper amber" id="csshook">
                 <ul>
                     <li><a href="/" class="left brand-logo"><img width="60" src="{% static 'images/gg_logo.png' %}" alt="My image"></a></li>
                 </ul>
@@ -26,15 +29,16 @@
                     <li><a class="cyan-text text-darken-4" href="{% url 'index' %}">View All My Courses</a></li>
                     <li><a class="cyan-text text-darken-4" href="{% url 'course_create' %}">Add a Course</a></li>
                     <li><a class="cyan-text text-darken-4" href="{% url 'logout' %}">Log Out</a></li>
-                    {% else %}
-                    <li><a class="cyan-text text-darken-4" href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a class="cyan-text text-darken-4" href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
+
+
+
+    
     </header>
-    <main class="container">
+    <main>
         {% block content %}
         {% endblock %}
     </main>
