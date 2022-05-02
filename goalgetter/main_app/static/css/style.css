@@ -8,15 +8,16 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     background-color: #B9FAF2;
+
 }
 
 main {
     flex: 1 0 auto;
-    width: 50%; 
-    background-color: white;  
+    width: 50%;
+    background-color: white;
     margin: 0 auto;
     padding: 20px;
-    
+
 }
 
 footer.page-footer {
@@ -25,7 +26,7 @@ footer.page-footer {
 }
 
 nav li {
-    color: rgb(26,108,108);
+    color: rgb(26, 108, 108);
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -43,10 +44,21 @@ nav img {
 
 h1 {
     font-family: 'Bebas Neue', cursive;
-    color: rgb(26,108,108);
+    color: rgb(26, 108, 108);
     text-align: center;
 }
 
 .card {
     height: 150px;
+}
+
+.about-content {
+    font-family: 'Cabin', sans-serif;
+    font-size: 19px;
+    padding: 0px 75px;
+
+}
+
+.about-img {
+    text-align: center;
 }
