@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-# from django.contrib.auth import login 
+ 
 
 # Add the following import
 from django.http import HttpResponse
@@ -20,14 +20,6 @@ class CourseCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user  # form.instance is the course
     return super().form_valid(form)
 
-
-# class AssignmentUpdate(UpdateView):
-#   model = Assignment
-#   fields = ['name', 'date', 'category', 'todo']
-
-# class AssignmentDelete(DeleteView):
-#   model = Assignment
-#   success_url = 'courses/<int:course_id>/'
 
 # Define the home view
 def home(request):
@@ -56,13 +48,8 @@ def add_assignment(request, course_id):
   return redirect('detail', course_id=course_id) 
 
 def delete_assignment(request, course_id, assignment_id):
-  # Course.objects.get(id=course_id).assignments.remove(assignment_id)
   Assignment.objects.filter(id=assignment_id).delete()
   return redirect('detail', course_id=course_id)
-
-# def update_assignment(request, course_id, assignment_id):
-#   Assignment.objects.filter(id=assignment_id).update()
-#   return redirect('detail', course_id=course_id)
 
 def edit_assignment(request,course_id,assignment_id):
     assignment = Assignment.objects.get(id=assignment_id)
@@ -80,12 +67,6 @@ def edit_assignment(request,course_id,assignment_id):
     }
     return render(request, 'courses/edit.html', context)
 
-
-
-# I would definitely start with changing from delete to update
-# Then grab your current assignment info into a variable and make changes to it as if you’re just writing in Python - that’s my assumption. Don’t forget to call .save() tho
-# 12:39
-# so like variable.name = new name then variable.save() before you render or redirect
 
 def signup(request):
   error_message = ''

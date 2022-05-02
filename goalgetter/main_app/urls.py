@@ -10,6 +10,5 @@ urlpatterns = [
   path('courses/create/', views.CourseCreate.as_view(), name='course_create'),
   path('courses/<int:course_id>/edit_assignment/<int:assignment_id>/', views.edit_assignment, name='edit_assignment'),
   path('courses/<int:course_id>/delete_assignment/<int:assignment_id>/', views.delete_assignment, name='delete_assignment'),
-  # path('assignment/<int:pk>/delete/', views.AssignmentDelete.as_view(), name='delete_assignment'),
   path('accounts/signup/', views.signup, name='signup'),
 ]
