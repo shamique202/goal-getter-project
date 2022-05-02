@@ -16,19 +16,19 @@
 <body>
     <header class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper amber">
                 <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;GoalGetter</a></li>
+                    <li><a href="/" class="left brand-logo"><img width="60" src="{% static 'images/gg_logo.png' %}" alt="My image"></a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'index' %}">View All My Courses</a></li>
-                    <li><a href="{% url 'course_create' %}">Add a Course</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'index' %}">View All My Courses</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'course_create' %}">Add a Course</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a class="cyan-text text-darken-4" href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -38,8 +38,8 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
-        <div class="right">All Rights Reserved, &copy; 2022 Goal Getter &nbsp;</div>
+    <footer class="page-footer amber">
+        <div class="cyan-text text-darken-4" class="right">All Rights Reserved, &copy; 2022 Goal Getter &nbsp;</div>
     </footer>
 </body>
 
