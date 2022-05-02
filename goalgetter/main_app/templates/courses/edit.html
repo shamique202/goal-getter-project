@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Edit</title>
+{% endblock title %}
+
+{% block content %}
+    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">Edit Assignment</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success">
+    </form>
+
+    <script>
+        const dateEl = document.getElementById('id_date');
+        M.Datepicker.init(dateEl, {
+          format: 'yyyy-mm-dd',
+          defaultDate: new Date(),
+          setDefaultDate: true,
+          autoClose: true
+        });
+        const selectEl = document.getElementById('id_category');
+        M.FormSelect.init(selectEl);
+      </script>
+{% endblock content %}

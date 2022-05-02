@@ -60,9 +60,26 @@ def delete_assignment(request, course_id, assignment_id):
   Assignment.objects.filter(id=assignment_id).delete()
   return redirect('detail', course_id=course_id)
 
-def update_assignment(request, course_id, assignment_id):
-  Assignment.objects.filter(id=assignment_id).update()
-  return redirect('detail', course_id=course_id)
+# def update_assignment(request, course_id, assignment_id):
+#   Assignment.objects.filter(id=assignment_id).update()
+#   return redirect('detail', course_id=course_id)
+
+def edit_assignment(request,course_id,assignment_id):
+    assignment = Assignment.objects.get(id=assignment_id)
+    form = AssignmentForm(instance=assignment)
+
+    if request.method == 'POST':
+        form = AssignmentForm(request.POST, instance=assignment)
+        if form.is_valid():
+            form.save()
+            return redirect('detail',course_id=course_id)
+
+    context = {
+        'assignment': assignment,
+        'form': form,
+    }
+    return render(request, 'courses/edit.html', context)
+
 
 
 # I would definitely start with changing from delete to update

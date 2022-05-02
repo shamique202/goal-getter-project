@@ -46,6 +46,7 @@
             {% csrf_token %}
             <button type="submit" class="btn">Delete</button>
           </form>
+          <a style="margin-right: 30px;" href="{% url 'edit_assignment' course.id assignment.id %}">Edit</a>
         </td>
       </tr>
       {% endfor %}
@@ -65,3 +66,7 @@
     M.FormSelect.init(selectEl);
   </script>
   {% endblock %}
+
+
+
+
