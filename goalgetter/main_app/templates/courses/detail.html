@@ -2,22 +2,24 @@
 
 
 {% block content %}
+<div class="detail_container">
 <h1>{{ course.name }}</h1>
 
 <form method="post" action="{% url 'add_assignment' course.id %}">
   {% csrf_token %}
   {{ assignment_form.as_p }}
-  <input type="submit" class="btn" value="Add Assignment">
+  <input type="submit" class="button add" value="Add">
 </form>
-<div class="col s6">
-  <table class="striped">
+<!-- <div class="col s6"> -->
+ <table><!-- <table class="striped"> -->
     <thead>
-      <tr>
+      <!-- <tr> -->
         <th>Due Date</th>
         <th>Assignment</th>
         <th>Category</th>
-        <th>Goals</th> 
-      </tr>
+        <th>Goals</th>
+        <th> </th> 
+      <!-- </tr> -->
     </thead>
     <tbody>
       {% for assignment in course.assignment_set.all %}
@@ -34,6 +36,7 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
 </div>
 
   <script>
