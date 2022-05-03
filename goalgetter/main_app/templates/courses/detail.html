@@ -3,6 +3,8 @@
 
 {% block content %}
 <div class="detail_container">
+
+
 <h1>{{ course.name }}</h1>
 
 <form method="post" action="{% url 'add_assignment' course.id %}">
@@ -20,6 +22,7 @@
         <th>Goals</th>
         <th> </th> 
       <!-- </tr> -->
+        
     </thead>
     <tbody>
       {% for assignment in course.assignment_set.all %}
