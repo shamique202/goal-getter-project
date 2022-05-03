@@ -27,11 +27,8 @@
         <td>{{assignment.get_category_display}}</td>
         <td>{{assignment.todo}}</td>
         <td>
-          <form action="{% url 'delete_assignment' course.id assignment.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn">Delete</button>
-          </form>
-          <a style="margin-right: 30px;" href="{% url 'edit_assignment' course.id assignment.id %}">Edit</a>
+          <a href="{% url 'edit_assignment' course.id assignment.id %}"><i class="small material-icons">edit</i></a>
+          <a href="{% url 'delete_assignment' course.id assignment.id %}"><i class="small material-icons">delete</i></a>
         </td>
       </tr>
       {% endfor %}
