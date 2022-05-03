@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Welcome </h1>
+<div class="home_content">
+    <h2>Welcome to<br><span class="home_title">Goal Getter</span></h2>
+<p>A resource to focus the chaos of everyday schoolwork into<br>
+    a well formed course work tracker. Set your goals to ace<br>
+    your assignments and become a <b><em>Goal Getter</em></b>.</p>
 
-<button><a href="{% url 'login' %}">Log In</a></button>
-<button><a href="{% url 'signup' %}">Sign Up</a></button>
+<div class="home_btn">
+<button class="button"><a href="{% url 'login' %}">Log In</a></button>
+<button class="button"><a href="{% url 'signup' %}">Sign Up</a></button>
+</div>
+</div>
+
+<div class="home_img"> {% load static %} <img width="200" src="{% static 'images/gghand.png' %}" alt="logo" /> </div>
 
 {% endblock %}
