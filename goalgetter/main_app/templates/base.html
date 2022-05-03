@@ -25,20 +25,20 @@
                 <div>
                     <a href="{% url 'home' %}"><img width='60' src="{% static 'images/gg_logo.png' %}" alt="Logo" /></a>
 
-    
 
-                  </div>
-                  <div>
-                    <a class="cyan-text text-darken-4" href="{% url 'about' %}">About</a>
-                        {% if user.is_authenticated %}
-                        <a class="cyan-text text-darken-4" href="{% url 'index' %}">View All My Courses</a>
-                        <a class="cyan-text text-darken-4" href="{% url 'course_create' %}">Add a Course</a>
-                        <a class="cyan-text text-darken-4" href="{% url 'logout' %}">Log Out</a>
-                        {% endif %}
-                  </div>
-                </nav>
+
                 </div>
-    
+                <div>
+                    <a class="cyan-text text-darken-4" href="{% url 'about' %}">About</a>
+                    {% if user.is_authenticated %}
+                    <a class="cyan-text text-darken-4" href="{% url 'index' %}">View All My Courses</a>
+                    <a class="cyan-text text-darken-4" href="{% url 'course_create' %}">Add a Course</a>
+                    <a class="cyan-text text-darken-4" href="{% url 'logout' %}">Log Out</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+
         </nav>
 
 
