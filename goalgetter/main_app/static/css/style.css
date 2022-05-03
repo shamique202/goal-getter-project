@@ -32,14 +32,21 @@ nav li {
 
 nav {
     box-shadow: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffc107;
 }
 
 nav img {
+    margin-top: 16px;
     margin-left: 12px;
 }
 
-.csshook {
-    font-size: 30px;
+nav a {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    padding: 12px;
 }
 
 h1 {
@@ -61,4 +68,9 @@ h1 {
 
 .about-img {
     text-align: center;
+}
+
+.striped a {
+    padding: 8px;
+    color: rgb(26, 108, 108);
 }
