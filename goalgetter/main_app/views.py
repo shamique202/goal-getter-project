@@ -20,6 +20,10 @@ class CourseCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user  # form.instance is the course
     return super().form_valid(form)
 
+class CourseDelete (LoginRequiredMixin, DeleteView):
+  model= Course 
+  success_url = '/courses/'
+
 
 # Define the home view
 def home(request):

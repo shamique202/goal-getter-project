@@ -15,7 +15,9 @@
       
         <div class="card-title">{{ course.name}}</div>
         <p class="card-subject">{{ course.subject }}</p>
-      
+        <div class="delete-course">
+        <a href="{% url 'course_delete' course.id %}"><i class="small material-icons">delete</i></a>
+      </div>
     </div>
   </div>
   </a>

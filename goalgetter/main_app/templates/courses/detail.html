@@ -5,8 +5,9 @@
 <div class="detail_container">
 
 
-<h1>{{ course.name }}</h1>
+<h1 class="detail-title">{{ course.name }}</h1>
 
+<div class="detail-content">
 <form method="post" action="{% url 'add_assignment' course.id %}">
   {% csrf_token %}
   {{ assignment_form.as_p }}
@@ -40,6 +41,7 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
 </div>
 </div>
 </div>
