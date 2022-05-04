@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    <title>Edit</title>
-{% endblock title %}
 
 {% block content %}
-    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">Edit Assignment</h1>
-
+<div class="detail_container">
+    <h1 class="detail-title" style="text-align: center; padding-top: 10px; padding-bottom: 10px;">Edit Assignment</h1>
+    <div class="detail-content">
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
+        <div class="add-submit">
         <input type="submit" class="button" value="Update">
+        </div>
     </form>
+    </div>
+</div>
 
     <script>
         const dateEl = document.getElementById('id_date');
