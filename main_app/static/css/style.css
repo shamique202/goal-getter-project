@@ -119,7 +119,7 @@ button a {
 .home_img {
     position: absolute;
     bottom: 0;
-    width: 58%;
+    width: 56%;
 }
 
 
@@ -260,10 +260,20 @@ label {
 .detail-content table {
     border-collapse: collapse;
 }
+
 .detail-content td {
     border-top: none;
     border-bottom: none;
 }
+
+footer {
+    height: 25px;
+}
+
+.footer {
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     .home_img img {
         width: 300px;
