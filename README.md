@@ -12,15 +12,18 @@ An intuitive and motivating way to track productivity by allowing users to acces
 -  Nancy Martinez, Scrum Master [GitHub](https://github.com/nanmardel)
 -  Shamique Etienne, Documenter & GitHub Manager [Github](https://github.com/shamique202)
 
-### Screenshots: 
+### Screenshots:  
+![Log in page](https://i.imgur.com/gsaAJZh.png)
+![Main course page](https://i.imgur.com/WrsDIfN.png)
+![Course detail page](https://i.imgur.com/2CO0j5U.png)
 
 ### Technologies Used:
--   HTML
--   Materialize CSS
--   Python 3 
--   Django
--   PostgreSQL
--   Heroku
+-   HTML was used to structure each page
+-   Materialize and CSS were used to add styling to every page
+-   Python3 was the programming language we used throughout our application
+-   Django was used as the backend framework
+-   PostgreSQL was used as the database to store our data
+-   Heroku was used to deploy our application
 
 ### Getting Started: 
 [Wireframe](https://www.figma.com/file/dfizlaxXeeRmkcTHLNEaH3/Untitled?node-id=0%3A1)
@@ -30,7 +33,7 @@ An intuitive and motivating way to track productivity by allowing users to acces
 [Powerpoint](https://docs.google.com/presentation/d/1PFo-nP6LyRT1axYmt0b9EzCq6sb9umg40SqgB6c3lBQ/edit?usp=sharing)
 
 
-(Heroku link Here)
+[Visit Goal Getter](https://the-goalgetter.herokuapp.com/)
 
 ### Minimum Viable Product (MVP): 
 -  As a user, I should be able to log in and out of the web application
