@@ -44,3 +44,4 @@ An intuitive and motivating way to track productivity by allowing users to acces
 ### Next Steps:
 -  As a user, I want reminders of my due dates to populate on my main course page
 -  As a user, I want to have a profile page that allows me to customize my account 
+-  As a user, I want to be able to view mobile-friendly design on my phone
