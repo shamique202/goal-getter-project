@@ -3,62 +3,53 @@
 
 {% block content %}
 <div class="detail_container">
+  <h1 class="detail-title">{{ course.name }}</h1>
 
-
-<h1 class="detail-title">{{ course.name }}</h1>
-
-<div class="detail-content">
-<form method="post" action="{% url 'add_assignment' course.id %}">
-  {% csrf_token %}
-  {{ assignment_form.as_p }}
-  <input type="submit" class="button add" value="Add">
-</form>
-<!-- <div class="col s6"> -->
-  <div id="assignment-table">
- <table><!-- <table class="striped"> -->
-    <thead>
-      <!-- <tr> -->
-        <th>Due Date</th>
-        <th>Assignment</th>
-        <th>Category</th>
-        <th>Goal</th>
-        <th> </th> 
-      <!-- </tr> -->
-        
-    </thead>
-    <tbody>
-      {% for assignment in course.assignment_set.all %}
-      <tr>
-        <td>{{assignment.date}}</td>
-        <td>{{assignment.name}}</td>
-        <td>{{assignment.get_category_display}}</td>
-        <td>{{assignment.todo}}</td>
-        <td>
-          <a href="{% url 'edit_assignment' course.id assignment.id %}"><i class="small material-icons">edit</i></a>
-          <a href="{% url 'delete_assignment' course.id assignment.id %}"><i class="small material-icons">delete</i></a>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-</div>
+  <div class="detail-content">
+    <form method="post" action="{% url 'add_assignment' course.id %}">
+      {% csrf_token %}
+      {{ assignment_form.as_p }}
+      <input type="submit" class="button add" value="Add">
+    </form>
+    <div id="assignment-table">
+      <table>
+        <thead>
+          <th>Due Date</th>
+          <th>Assignment</th>
+          <th>Category</th>
+          <th>Goal</th>
+          <th> </th>
+        </thead>
+        <tbody>
+          {% for assignment in course.assignment_set.all %}
+          <tr>
+            <td>{{assignment.date}}</td>
+            <td>{{assignment.name}}</td>
+            <td>{{assignment.get_category_display}}</td>
+            <td>{{assignment.todo}}</td>
+            <td>
+              <a href="{% url 'edit_assignment' course.id assignment.id %}"><i class="small material-icons">edit</i></a>
+              <a href="{% url 'delete_assignment' course.id assignment.id %}"><i
+                  class="small material-icons">delete</i></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 </div>
 
-  <script>
-    const dateEl = document.getElementById('id_date');
-    M.Datepicker.init(dateEl, {
-      format: 'yyyy-mm-dd',
-      defaultDate: new Date(),
-      setDefaultDate: true,
-      autoClose: true
-    });
-    const selectEl = document.getElementById('id_category');
-    M.FormSelect.init(selectEl);
-  </script>
-  {% endblock %}
-
-
-
-
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+  const selectEl = document.getElementById('id_category');
+  M.FormSelect.init(selectEl);
+</script>
+{% endblock %}
