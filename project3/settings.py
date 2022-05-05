@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+WSGI_APPLICATION = 'project3.wsgi.application'
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,8 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # import django_heroku
 # django_heroku.settings(locals())
-
-WSGI_APPLICATION = 'project3.wsgi.application'
 
 import django_on_heroku
 django_on_heroku.settings(locals())
